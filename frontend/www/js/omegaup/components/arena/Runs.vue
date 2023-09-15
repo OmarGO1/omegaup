@@ -219,7 +219,7 @@
               <th v-if="showUser">{{ T.contestParticipant }}</th>
               <th v-if="showContest">{{ T.wordsContest }}</th>
               <th v-if="contestAlias != null && !isCourse">
-                {{ T.wordsStatus }}
+                {{ T.wordsVerdict }}
               </th>
               <th v-if="showProblem">{{ T.wordsProblem }}</th>
               <th v-if="showPoints" class="numeric">{{ T.wordsPoints }}</th>
@@ -573,6 +573,7 @@ export default class Runs extends Vue {
   @Prop() searchResultProblems!: types.ListItem[];
   @Prop() requestFeedback!: boolean;
   @Prop({ default: false }) isCourse!: boolean;
+  @Prop({ default: 7 }) itemsPerPage!: number;
 
   OutputStatus = OutputStatus;
   PopupDisplayed = PopupDisplayed;
@@ -592,7 +593,6 @@ export default class Runs extends Vue {
   currentRunDetailsData = this.runDetailsData;
   currentPopupDisplayed = this.popupDisplayed;
   currentPage: number = 1;
-  itemsPerPage: number = 7;
 
   get totalRows(): number {
     return this.filteredRuns.length;

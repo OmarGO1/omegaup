@@ -104,7 +104,11 @@ class Runs extends \OmegaUp\DAO\Base\Runs {
         return $result;
     }
 
+    /**
+     * @return string
+     */
     final public static function getRunExtraFields() {
+        /** @var string */
         return '
         ( SELECT
             IF(

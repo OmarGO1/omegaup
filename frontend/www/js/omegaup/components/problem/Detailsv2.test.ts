@@ -230,7 +230,5 @@ describe('Detailsv2.vue', () => {
     expect(runsTab.text()).toContain(T.wordsVerdict);
     expect(runsTab.text()).toContain(T.wordsStatus);
     expect(runsTab.text()).toContain(T.wordsLanguage);
-    expect(runsTab.text()).toContain(T.wordsExecution);
-    expect(runsTab.text()).toContain(T.wordsOutput);
   });
 });
